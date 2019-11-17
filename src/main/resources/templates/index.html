@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz Muito Louco</h1>
+    <form method="POST">
+        <div th:each="question : ${questions}">
+            <p th:text="${question.question}"></p>
+            <input type="checkbox" th:each="alternative : ${question.alternatives}" th:text="${alternative.alternative}" th:value="${alternative.correct}" name="correct">
+        </div>
+        <button type="submit">Responder</button>
+    </form>
+</body>
+</html>
